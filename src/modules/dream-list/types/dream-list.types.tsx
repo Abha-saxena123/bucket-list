@@ -11,6 +11,7 @@ export interface Users {
   lastName: string;
   userName: string;
   password: string;
+  name: string;
   _id: string;
 }
 

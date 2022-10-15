@@ -45,6 +45,7 @@ const providers = [
               password: res.user.password,
               firstName: res.user.firstName,
               userName: res.user.userName,
+              name: res.user.name,
               _id: res.user._id,
             } as Users,
           };
