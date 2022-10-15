@@ -27,7 +27,8 @@ export const AddUserFrom: React.FC = () => {
   }
 
   const onSubmit = async (payload: Users): Promise<void> => {
-    addUser(payload, { onSuccess });
+    const name = `${payload.firstName} ${payload.lastName}`;
+    addUser({ ...payload, name }, { onSuccess });
   };
 
   const onSuccess = () => {
