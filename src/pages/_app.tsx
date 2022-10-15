@@ -33,7 +33,6 @@ function MyApp({ Component, pageProps, session }: AppProps & CustomAppProps) {
     <SessionProvider session={session} refetchInterval={60}>
       <QueryClientProvider client={queryClient}>
         {getLayout(<AnyComponent {...pageProps} />)}
-
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </SessionProvider>
