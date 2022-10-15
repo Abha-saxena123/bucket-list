@@ -26,11 +26,13 @@ interface CustomAppProps {
 function MyApp({ Component, pageProps, session }: AppProps & CustomAppProps) {
   const getLayout = Component.getLayout || getDefaultLayout;
 
+  const AnyComponent = Component as any;
+
   const queryClient = useMemo(() => new QueryClient(QUERY_CLIENT_CONFIG), []);
   return (
     <SessionProvider session={session} refetchInterval={60}>
       <QueryClientProvider client={queryClient}>
-        {getLayout(<Component {...pageProps} />)}
+        {getLayout(<AnyComponent {...pageProps} />)}
 
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
