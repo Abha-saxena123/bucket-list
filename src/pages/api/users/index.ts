@@ -15,7 +15,6 @@ export default async function handler(
 
   if (method === "POST") {
     const newUser = req.body;
-    console.log("@@@@@@@@@", newUser);
     db.collection("users").insertOne(newUser, function (err, res) {
       if (err) throw err;
     });

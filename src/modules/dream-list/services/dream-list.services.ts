@@ -23,7 +23,7 @@ export class DreamListServices {
 
   static async updateDream(payload: DreamUpdateProps): Promise<void> {
     return await axios
-      .put(`${API_CONSTANT.DREAM}`, payload)
+      .put(API_CONSTANT.DREAM, payload)
       .then((res) => res.data.data);
   }
 }

@@ -11,7 +11,6 @@ export default async function handler(
 
   if (method === "POST") {
     const { userName, password } = req.body;
-    console.log("@@@@@@", userName, password);
     const database = await db
       .collection("users")
       .find({ userName: userName })

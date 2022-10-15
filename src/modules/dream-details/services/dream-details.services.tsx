@@ -8,7 +8,7 @@ import { DreamDetailsProps } from "../types/dream-details";
 export class DreamDetailsServices {
   static async getDreamDetails(id: string): Promise<DreamDetailsProps> {
     return await axios
-      .get(`${API_CONSTANT.DREAM}`, {
+      .get(API_CONSTANT.DREAM, {
         params: {
           id: id,
         },

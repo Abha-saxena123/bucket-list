@@ -15,7 +15,7 @@ interface LoginResponse {
 export class AuthService {
     public static async login({ userName, password }: { userName: string; password: string }): Promise<LoginResponse> {
         return axios
-          .post(`${API_CONSTANT.LOGIN}`, { userName:userName, password:password })
+          .post(API_CONSTANT.LOGIN, { userName:userName, password:password })
           .then((res) => res.data)
           .catch(() => {
             // This is a mock error for login error

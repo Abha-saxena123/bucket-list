@@ -3,11 +3,6 @@ import getConfig from "next/config";
 const { publicRuntimeConfig } = getConfig();
 
 export const BASE_URL = publicRuntimeConfig.apiUrl;
-console.log(
-  "@@@@@@@@@@@@==========================api",
-  publicRuntimeConfig.apiUrl,
-  BASE_URL
-);
 
 export const API_CONSTANT = {
   USERS: "/users",

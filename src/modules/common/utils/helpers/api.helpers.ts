@@ -8,12 +8,6 @@ import {
 (function setAxiosSetup(): void {
   if (axios.defaults.baseURL !== BASE_URL) {
     axios.defaults.baseURL = BASE_URL;
-
-    console.log(
-      "@@@@@@@@@@@@====================------------------",
-      axios.defaults.baseURL,
-      BASE_URL
-    );
     axios.interceptors.response.use(
       (response: AxiosResponse) => response,
 

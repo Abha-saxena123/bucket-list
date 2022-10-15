@@ -16,7 +16,7 @@ export default async function handler(
     if (method === "GET") {
       const dreamList = await db
         .collection("dreamItems")
-        .find({ firstName: user })
+        .find({ name: user })
         .toArray();
       res.status(200).json({ data: dreamList });
     }
