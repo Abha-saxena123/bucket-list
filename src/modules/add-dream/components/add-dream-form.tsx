@@ -31,9 +31,9 @@ export const AddDreamFrom: React.FC = () => {
       <StyledInput
         required
         id="outlined-basic"
-        label="FirstName"
+        label="User Name"
         variant="outlined"
-        {...register("firstName")}
+        {...register("name")}
       />
       <StyledInput
         required
