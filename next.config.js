@@ -12,13 +12,4 @@ module.exports = {
     apiUrl: process.env.API_URL,
     rsaPublicKey: process.env.RSA_PUBLIC_KEY,
   },
-
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "https://api.example.com/:path*",
-      },
-    ];
-  },
 };

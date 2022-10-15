@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import NextCors from "nextjs-cors";
 import { connectToDatabase } from "../../../../lib/mongodb";
 
 export default async function handler(
@@ -8,9 +9,11 @@ export default async function handler(
   const { method } = req;
   let { db } = await connectToDatabase();
 
-  if (method === "OPTIONS") {
-    res.status(200);
-  }
+  await NextCors(req, res, {
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    origin: "*",
+    optionsSuccessStatus: 200,
+  });
 
   if (method === "GET") {
     const userList = await db.collection("users").find().toArray();
