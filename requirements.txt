@@ -1,0 +1,15 @@
+Should display the list according to user -done
+user can be added - backend done UI is pending
+user should be able to add items - done
+user should be able to mark item done -done
+after click on the item in the list it should display
+   1. Title
+   2. Description
+   3. Image if any -Later
+   4. Remarks optional
+   5. experience- if completed
+
+
+When user mark it done, it can add experience with that -done
+
+
