@@ -8,6 +8,10 @@ export default async function handler(
   const { method } = req;
   let { db } = await connectToDatabase();
 
+  if (method === "OPTIONS") {
+    res.status(200);
+  }
+
   if (method === "GET") {
     const userList = await db.collection("users").find().toArray();
     res.status(200).json({ data: userList });

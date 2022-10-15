@@ -10,6 +10,10 @@ export default async function handler(
     method,
     query: { id },
   } = req;
+
+  if (method === "OPTIONS") {
+    res.status(200);
+  }
   let { db } = await connectToDatabase();
 
   if (method === "GET") {
