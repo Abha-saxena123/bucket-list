@@ -29,7 +29,9 @@ export const Header: React.FC = () => {
         ))}
       </HeaderLinkContainer>
       <LogoutButton onClick={handleLogout}>
-        <Typography fontType={FontType.HEADLINE2}>Logout 😧</Typography>{" "}
+        <Typography fontType={FontType.HEADLINE2}>
+          Logout <span>😧</span>
+        </Typography>{" "}
       </LogoutButton>
     </HeaderContainer>
   );
@@ -38,4 +40,12 @@ export const Header: React.FC = () => {
 const LogoutButton = styled.div`
   position: absolute;
   right: 50px;
+  > div > span {
+    display: none;
+  }
+  :hover {
+    > div > span {
+      display: block;
+    }
+  }
 `;

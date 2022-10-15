@@ -2,6 +2,7 @@ import { StyledTypographyProps } from "../../types/typography.types";
 import styled from "styled-components";
 
 export const StyledTypography = styled.div<StyledTypographyProps>`
+  display: flex;
   color: ${({ color }) => (color ? color : "black")};
   font-size: ${(style) => style.desktop.fontSize};
   font-weight: ${(style) => style.desktop.fontWeight};
