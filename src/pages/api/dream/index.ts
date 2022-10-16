@@ -17,7 +17,7 @@ export default async function handler(
     origin: "*",
     optionsSuccessStatus: 200,
   });
-  
+
   let { db } = await connectToDatabase();
 
   if (method === "GET") {

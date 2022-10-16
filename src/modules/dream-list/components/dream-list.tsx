@@ -30,9 +30,11 @@ export const DreamList: React.FC<{
     return <Error errorMessage={error.message} />;
   }
 
-  const openForm = () => {
-    (document.getElementById("markDonePopup") as HTMLElement).style.display =
-      "block";
+  const openForm = (e: React.MouseEvent) => {
+    const id = e.currentTarget.getAttribute("data-id");
+    (
+      document.getElementById(`markDonePopup_${id}`) as HTMLElement
+    ).style.display = "block";
   };
 
   const items = data as BucketListProps[];
@@ -49,7 +51,7 @@ export const DreamList: React.FC<{
           paddingTop: "10px",
         }}
       >
-        <Typography fontType={FontType.HEADLINE1} color={'maroon'}>
+        <Typography fontType={FontType.HEADLINE1} color={"maroon"}>
           {`Hi ${firstName}, Here is your dream list`}
         </Typography>
       </div>
@@ -60,7 +62,7 @@ export const DreamList: React.FC<{
               <Typography fontType={FontType.COPY_LARGE_BOLD}>
                 <Link href={`/list/${dream._id}`}>{dream.title}</Link>
               </Typography>
-              <Button onClick={openForm}>
+              <Button onClick={openForm} data-id={dream._id}>
                 <ListTrophy isDone={dream.isDone}>🏆</ListTrophy>
               </Button>
               <MarkItDoneFrom
@@ -83,7 +85,6 @@ export const DreamList: React.FC<{
             </Link>
           </AddLinkWrapper>
         )}
-        {/* </TabPanel> */}
       </ListValueContainer>
     </ListTabContainer>
   );
