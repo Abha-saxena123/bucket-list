@@ -23,7 +23,6 @@ export const MarkItDoneFrom: React.FC<MarkItDoneFormProps> = ({
   const { register, handleSubmit, reset } = useForm();
 
   const { mutate: updateDream, error, isError } = useUpdateDream();
-
   if (isError) {
     return <Error errorMessage={error.message} />;
   }
@@ -46,19 +45,20 @@ export const MarkItDoneFrom: React.FC<MarkItDoneFormProps> = ({
   };
 
   const closeForm = () => {
-    (document.getElementById("markDonePopup") as HTMLElement).style.display =
-      "none";
+    (
+      document.getElementById(`markDonePopup_${id}`) as HTMLElement
+    ).style.display = "none";
   };
 
   window.onclick = function (event) {
-    let modal = document.getElementById("markDonePopup");
+    let modal = document.getElementById(`markDonePopup_${id}`);
     if (event.target == modal) {
       closeForm();
     }
   };
 
   return (
-    <UpdateFormWrapper id="markDonePopup">
+    <UpdateFormWrapper id={`markDonePopup_${id}`}>
       <UpdateForm onSubmit={handleSubmit(onSubmit)}>
         <StyledExperienceInput
           id="markDoneInput"
