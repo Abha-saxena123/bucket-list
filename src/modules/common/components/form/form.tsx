@@ -17,9 +17,9 @@ export const Form: React.FC<FormProps> = ({
     <FormContainer isLogin={isLogin}>
       <FormWrapper onSubmit={onSubmit}>
         {children}
-        <FormSubmitButton type="submit">
+        {/* <FormSubmitButton type="submit">
           {submitBtnTxt ? submitBtnTxt : "Submit"}
-        </FormSubmitButton>
+        </FormSubmitButton> */}
       </FormWrapper>
     </FormContainer>
   );

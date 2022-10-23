@@ -4,6 +4,7 @@ import {
   OutlinedInput,
   InputAdornment,
   IconButton,
+  Input,
 } from "@material-ui/core";
 import { VisibilityOff, Visibility } from "@material-ui/icons";
 import { useForm } from "react-hook-form";
@@ -17,6 +18,9 @@ import { signIn } from "next-auth/react";
 import getConfig from "next/config";
 import { encryptData } from "../../common/utils/helpers/encryption.helpers";
 import { RedirectableProviderType } from "next-auth/providers";
+import { MyBucketListText, StyledDiv } from "../../../pages/cover";
+import { SubmitFormLayout } from "../../../pages";
+import Link from "next/link";
 
 const {
   publicRuntimeConfig: { hostUrl },
@@ -86,35 +90,23 @@ export const LoginForm: React.FC = () => {
 
   return (
     <Form onSubmit={handleSubmit(handleFormSubmit)} isLogin={true}>
-      <StyledInput
-        required
-        id="userName"
-        variant="outlined"
-        label="User Name"
-        {...register("userName")}
-      />
-      <AddUserPassword variant="outlined">
-        <InputLabel>Password</InputLabel>
-        <OutlinedInput
+      <StyledDiv className="glow">
+        <StyledInput
           required
-          id="password"
-          label="Password"
-          type={showPassword ? "text" : "password"}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-                edge="end"
-              >
-                {showPassword ? <VisibilityOff /> : <Visibility />}
-              </IconButton>
-            </InputAdornment>
-          }
-          {...register("password")}
+          placeholder="Enter User name"
+          type={"text"}
+          {...register("userName")}
         />
-      </AddUserPassword>
+        <MyBucketListText />
+
+        <SubmitFormLayout>
+          <StyledInput placeholder="Enter Password" {...register("password")} />
+          <div>
+            <button type="submit">Submit</button>
+            <Link href={"/add-user"}>Sign Up</Link>
+          </div>
+        </SubmitFormLayout>
+      </StyledDiv>
     </Form>
   );
 };

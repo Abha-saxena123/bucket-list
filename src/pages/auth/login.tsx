@@ -2,6 +2,7 @@ import { ReactElement, ReactNode } from "react";
 import { NextPage } from "next";
 import { AuthLayout } from "../../modules/common/components/layout/auth-layout";
 import dynamic from "next/dynamic";
+import { IndexWrapper } from "..";
 
 const LoginFormWithNoSSR = dynamic<Record<string, unknown>>(
   () =>
@@ -18,13 +19,13 @@ type NextPageWithAuthLayout = NextPage & {
 
 const LoginPage: NextPageWithAuthLayout = () => {
   const LoginForm = LoginFormWithNoSSR as any;
-  return <LoginForm />;
+  return (
+    <IndexWrapper>
+      <LoginForm />
+    </IndexWrapper>
+  );
 };
 
 LoginPage.auth = false;
-
-LoginPage.getLayout = (page: ReactElement): ReactNode => (
-  <AuthLayout>{page}</AuthLayout>
-);
 
 export default LoginPage;

@@ -23,13 +23,9 @@ export const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   return (
     <AppLayout>
-      <Header />
-      <AppContent>
-        <AppSideImage />
-        <AppWrapper> {children}</AppWrapper>
-        <AppSideImage />
-      </AppContent>
-      <Footer />
+      {/* <Header /> */}
+      <AppContent>{children}</AppContent>
+      {/* <Footer /> */}
     </AppLayout>
   );
 };

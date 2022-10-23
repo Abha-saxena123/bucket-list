@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const AppLayout = styled.div`
   display: flex;
   min-height: 100vh;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 `;
 
@@ -16,13 +18,26 @@ export const AppLayout = styled.div`
 // }
 
 export const AppWrapper = styled.div`
-  flex-grow: 1;
+  justify-self: center;
+  .glow {
+    color: #4a0404;
+    text-align: center;
+    text-shadow: 0 0 7px lightCoral, 0 0 10px lightCoral, 0 0 21px lightCoral,
+      0 0 42px coral, 0 0 82px coral, 0 0 92px coral, 0 0 102px coral,
+      0 0 151px coral;
+  }
+  height: 95vh;
+  width: 450px;
+  background-image: url(/cover.gif);
+  box-shadow: inset 0px 0px 0px 0px rgb(240 128 128), 0px 0px 9px black,
+    0px 0px 10px green;
+  border-radius: 10px;
 `;
 
 export const AppContent = styled.main`
   display: flex;
-  flex: 1;
-  background-color: floralwhite;
+  align-items: center;
+  justify-content: center;
 `;
 // ${MediaBreakpoints.down('md')} {
 //   margin-right: ${spacing(5)};
