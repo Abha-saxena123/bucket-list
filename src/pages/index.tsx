@@ -31,7 +31,11 @@ const Home: NextPage = () => {
       <StyledDiv className="glow">
         <h1>Name: {name}</h1>
         <MyBucketListText />
-        <Link href="/list">Open</Link>
+        <StyledLink>
+          <Link href="/list" id="index-page">
+            Open
+          </Link>
+        </StyledLink>
       </StyledDiv>
     </IndexWrapper>
   );
@@ -80,7 +84,7 @@ export const IndexWrapper = styled.div`
   border-radius: 10px;
 `;
 
-const StyledDiv = styled.form`
+export const StyledDiv = styled.form`
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -96,7 +100,10 @@ const StyledDiv = styled.form`
     }
   }
   margin-left: 24px;
+`;
 
+const StyledLink = styled.div`
+  padding: 16px;
   a {
     text-decoration: none;
     color: #4a0404;
@@ -110,12 +117,4 @@ const StyledDiv = styled.form`
         0px 0px 10px green;
     }
   }
-`;
-
-const Input = styled.input`
-  background-color: #4a0404;
-  margin: 24px;
-  height: 30px;
-  color: lightCoral;
-  width: 200px;
 `;
