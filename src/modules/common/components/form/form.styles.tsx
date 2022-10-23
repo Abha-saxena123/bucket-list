@@ -16,7 +16,7 @@ export const StyledInput = styled.input`
   margin-bottom: 20px;
 `;
 
-export const FormSubmitButton = styled(Button)`
+export const FormSubmitButton = styled.button`
   background-color: #4a0404;
   height: 30px;
   color: lightCoral;

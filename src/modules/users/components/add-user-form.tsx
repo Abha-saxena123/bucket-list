@@ -54,48 +54,22 @@ export const AddUserFrom: React.FC = () => {
     >
       <StyledInput
         required
+        placeholder="Enter First Name"
         id="firstName"
-        label="FirstName"
-        variant="outlined"
         {...register("firstName")}
       />
       <StyledInput
         required
+        placeholder="Enter Last Name"
         id="lastName"
-        label="LastName"
-        variant="outlined"
         {...register("lastName")}
       />
       <StyledInput
         required
-        id="userName"
-        label="UserName"
-        variant="outlined"
         placeholder="Enter Unique User Name"
         {...register("userName")}
       />
-      <AddUserPassword variant="outlined">
-        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-        <OutlinedInput
-          required
-          id="password"
-          label="Password"
-          type={showPassword ? "text" : "password"}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-                edge="end"
-              >
-                {showPassword ? <VisibilityOff /> : <Visibility />}
-              </IconButton>
-            </InputAdornment>
-          }
-          {...register("password")}
-        />
-      </AddUserPassword>
+      <StyledInput placeholder="Enter Password" {...register("password")} />
     </Form>
   );
 };

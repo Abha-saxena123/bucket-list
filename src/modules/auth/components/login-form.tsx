@@ -18,7 +18,7 @@ import { signIn } from "next-auth/react";
 import getConfig from "next/config";
 import { encryptData } from "../../common/utils/helpers/encryption.helpers";
 import { RedirectableProviderType } from "next-auth/providers";
-import { MyBucketListText, StyledDiv } from "../../../pages/cover";
+import { MyBucketListText, StyledDiv } from "../../../pages";
 import { SubmitFormLayout } from "../../../pages";
 import Link from "next/link";
 
@@ -98,7 +98,6 @@ export const LoginForm: React.FC = () => {
           {...register("userName")}
         />
         <MyBucketListText />
-
         <SubmitFormLayout>
           <StyledInput placeholder="Enter Password" {...register("password")} />
           <div>
