@@ -8,19 +8,25 @@ export const FormWrapper = styled.form`
   flex-grow: 1;
 `;
 
-export const StyledInput = styled(TextField)`
-  margin: 10px !important;
+export const StyledInput = styled.input`
+  background-color: #4a0404;
+  color: lightCoral;
+  width: 200px;
+  height: 30px;
+  margin-bottom: 20px;
 `;
 
 export const FormSubmitButton = styled(Button)`
-  background-color: darkcyan !important;
+  background-color: #4a0404;
+  height: 30px;
+  color: lightCoral;
+  width: 200px;
   margin 10px !important;
 `;
 
 export const FormContainer = styled.div<{ isLogin?: boolean }>`
   display: flex;
-  background-color: cream;
-  border: 5px solid darkcyan;
+  height: 100%;
   margin: 10px;
   position: ${({ isLogin }) => (isLogin ? "unset" : "relative")};
   left: 24%;

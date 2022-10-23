@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100px;
+  min-height: 50px;
   background-color: darkcyan;
 `;
 
